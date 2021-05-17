@@ -35,7 +35,7 @@ class Service(models.Model):
 
 class Client(models.Model):
     name = models.CharField(max_length=50)
-    email = models.EmailField()
+    email = models.EmailField(max_length=50)
     phone = models.CharField(max_length=11)
     city = models.CharField(max_length=20)
 
