@@ -87,5 +87,36 @@ class ProjectModelTests(TestCase):
         self.assertEqual(True, is_blank)
 
 
+class ProfileModelTests(TestCase):
 
+    @classmethod
+    def setUpTestData(cls):
+        Profile.objects.create(
+            name='name',
+            description='description',
+            b_date=timezone.now(),
+            occupation='occupation',
+            email='email@mail.com',
+            phone='99999999999',
+        )
+
+    def test_name_max_length(self):
+        profile = Profile.objects.get(id=1)
+        max_length = profile._meta.get_field('name').max_length
+        self.assertEqual(50, max_length)
+
+    def test_occupation_max_length(self):
+        profile = Profile.objects.get(id=1)
+        max_length = profile._meta.get_field('occupation').max_length
+        self.assertEqual(50, max_length)
+
+    def test_email_max_length(self):
+        profile = Profile.objects.get(id=1)
+        max_length = profile._meta.get_field('email').max_length
+        self.assertEqual(50, max_length)
+
+    def test_phone_max_length(self):
+        profile = Profile.objects.get(id=1)
+        max_length = profile._meta.get_field('phone').max_length
+        self.assertEqual(11, max_length)
 
