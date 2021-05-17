@@ -34,8 +34,6 @@ class ContactModelTests(TestCase):
 class ClientModelTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        # Set up non-modified objects used by all test methods
-        print("setUpTestData: Run once to set up non-modified data for all class methods.")
         Client.objects.create(name='name', email='mail@mail.com', phone='99999999999', city='City-State')
 
     def test_name_max_length(self):
@@ -63,8 +61,6 @@ class ProjectModelTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        # Set up non-modified objects used by all test methods
-        print("setUpTestData: Run once to set up non-modified data for all class methods.")
         service = Service.objects.create(name='name', description='description')
         client = Client.objects.create(name='name', email='mail@mail.com', phone='99999999999', city='City-State')
         project = Project.objects.create(
@@ -130,3 +126,25 @@ class ServiceModelTests(TestCase):
         service = Service.objects.get(id=1)
         max_length = service._meta.get_field('name').max_length
         self.assertEqual(50, max_length)
+        
+        
+class ImageProjectModelTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        service = Service.objects.create(name='name', description='description')
+        client = Client.objects.create(name='name', email='mail@mail.com', phone='99999999999', city='City-State')
+        project = Project.objects.create(
+            name='name',
+            description='description',
+            service=service,
+            client=client,
+            date=timezone.now(),
+            url='site.com',
+        )
+        ImageProject.objects.create(name='name', project=project)
+
+    def test_name_max_length(self):
+        service = ImageProject.objects.get(id=1)
+        max_length = service._meta.get_field('name').max_length
+        self.assertEqual(50, max_length)
+
