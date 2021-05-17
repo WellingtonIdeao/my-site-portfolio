@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'portfolio/css/normalize.css' %}">
+        <script type="text/javascript" src="{% static 'portfolio/js/prefixfree.min.js' %}"></script>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <div class="container">
+        <header>
+            <h1>BASE HEADER</h1>
+        </header>
+        <body>
+            <section>
+                {% block content %}{% endblock %}
+            </section>
+        </body>
+        <footer>BASE FOOTER</footer>
+    </div>
+</html>
