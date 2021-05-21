@@ -1,7 +1,8 @@
 from django.shortcuts import render
+from django.views.generic.list import ListView
 from django.views.generic.base import TemplateView
 from django.shortcuts import get_object_or_404
-from .models import Profile
+from .models import Profile, Service
 # Create your views here.
 
 
@@ -18,7 +19,8 @@ class AboutView(TemplateView):
         return context
 
 
-class ServicesView(TemplateView):
+class ServicesView(ListView):
+    model = Service
     template_name = 'portfolio/services.html'
 
 

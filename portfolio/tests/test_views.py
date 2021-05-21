@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.shortcuts import reverse
-from ..models import Profile
+from ..models import Profile, Service
 from django.utils import timezone
 
 
@@ -39,9 +39,26 @@ class AboutViewTests(TestCase):
 
 class ServicesViewTests(TestCase):
 
+    @classmethod
+    def setUpTestData(cls):
+        Service.objects.create(name='name', description='description')
+
     def test_status_200(self):
         response = self.client.get(reverse('portfolio:services'))
         self.assertEqual(response.status_code, 200)
+
+    def test_one_service(self):
+        response = self.client.get(reverse('portfolio:services'))
+        self.assertQuerysetEqual(response.context['service_list'], ['<Service: name>'])
+
+    def test_many_services(self):
+        Service.objects.create(name='name', description='description')
+        response = self.client.get(reverse('portfolio:services'))
+        self.assertQuerysetEqual(
+            response.context['service_list'],
+            ['<Service: name>', '<Service: name>'],
+            ordered=False
+        )
 
 
 class PortfolioViewTests(TestCase):
