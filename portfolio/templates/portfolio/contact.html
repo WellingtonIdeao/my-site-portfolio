@@ -1,4 +1,9 @@
 {% extends 'portfolio/base_contact.html' %}
 
 {% block title %}CONTACT{% endblock %}
-{% block content %}CONTACT SCONTENT{% endblock %}
+{% block content %}
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Send message">
+</form>
+{% endblock %}

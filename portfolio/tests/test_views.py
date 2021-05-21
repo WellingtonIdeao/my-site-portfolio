@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.shortcuts import reverse
-from ..models import Profile, Service, Project, Client
+from ..models import Profile, Service, Project, Client, Contact
 from django.utils import timezone
 
 
@@ -105,6 +105,10 @@ class PortfolioViewTests(TestCase):
 
 
 class ContactViewTests(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        Contact.objects.create(name='', email='', subject='subject', message='message')
 
     def test_status_200(self):
         response = self.client.get(reverse('portfolio:contact'))
