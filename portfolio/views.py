@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.base import TemplateView
 from django.shortcuts import get_object_or_404
-from .models import Profile, Service
+from .models import Profile, Service, Project
 # Create your views here.
 
 
@@ -24,7 +24,8 @@ class ServicesView(ListView):
     template_name = 'portfolio/services.html'
 
 
-class PortfolioView(TemplateView):
+class PortfolioView(ListView):
+    model = Project
     template_name = 'portfolio/portfolio.html'
 
 

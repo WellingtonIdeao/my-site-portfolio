@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.shortcuts import reverse
-from ..models import Profile, Service
+from ..models import Profile, Service, Project, Client
 from django.utils import timezone
 
 
@@ -63,9 +63,45 @@ class ServicesViewTests(TestCase):
 
 class PortfolioViewTests(TestCase):
 
+    @classmethod
+    def setUpTestData(cls):
+        service = Service.objects.create(name='name', description='description')
+        client = Client.objects.create(name='name', email='email@mail.com', phone='99999999999', city='city')
+        Project.objects.create(
+            name='name',
+            description='description',
+            service=service,
+            client=client,
+            date=timezone.now(),
+        )
+
     def test_status_200(self):
         response = self.client.get(reverse('portfolio:portfolio'))
         self.assertEqual(response.status_code, 200)
+
+    def test_one_project(self):
+        response = self.client.get(reverse('portfolio:portfolio'))
+        self.assertQuerysetEqual(
+            response.context['project_list'],
+            ['<Project: name>'],
+        )
+
+    def test_many_project(self):
+        service = Service.objects.create(name='name', description='description')
+        client = Client.objects.create(name='name', email='email@mail.com', phone='99999999999', city='city')
+        Project.objects.create(
+            name='name',
+            description='description',
+            service=service,
+            client=client,
+            date=timezone.now(),
+        )
+        response = self.client.get(reverse('portfolio:portfolio'))
+        self.assertQuerysetEqual(
+            response.context['project_list'],
+            ['<Project: name>', '<Project: name>'],
+            ordered=False
+        )
 
 
 class ContactViewTests(TestCase):
