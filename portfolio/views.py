@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import FormView
+from django.views.generic.edit import CreateView
 from django.shortcuts import get_object_or_404
 from .models import Profile, Service, Project
 from .forms import ContactForm
@@ -31,7 +31,7 @@ class PortfolioView(ListView):
     template_name = 'portfolio/portfolio.html'
 
 
-class ContactView(FormView):
+class ContactView(CreateView):
     template_name = 'portfolio/contact.html'
     form_class = ContactForm
     success_url = '/thanks/'
