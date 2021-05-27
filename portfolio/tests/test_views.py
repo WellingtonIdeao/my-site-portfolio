@@ -106,12 +106,9 @@ class PortfolioViewTests(TestCase):
 
 class ContactViewTests(TestCase):
 
-    @classmethod
-    def setUpTestData(cls):
-        Contact.objects.create(name='', email='', subject='subject', message='message')
-
     def test_status_200(self):
         response = self.client.get(reverse('portfolio:contact'))
         self.assertEqual(response.status_code, 200)
 
+    # def test_redirect_success_url(self):
 
