@@ -5,7 +5,13 @@
 {% block content %}
 <div class="row row-cols-12">
     <div class="col">
+     {% block header %} {% endblock header %}
+    </div> <!-- /col -->
+</div> <!-- /row -->
+<div class="row row-cols-12">
+    <div class="col">
      {% block form %} {% endblock form %}
     </div> <!-- /col -->
 </div> <!-- /row -->
+
 {% endblock content %}
