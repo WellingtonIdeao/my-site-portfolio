@@ -20,16 +20,40 @@
         <title>{% block title %}{% endblock title %}</title>
     </head>
 
-    <body class="container">
+   <body>
+    <!-- header
+    ================================================== -->
         <header>
-            <h1>BASE HEADER</h1>
-        </header>
-        <section>
-            {% block content %}{% endblock content %}
-        </section>
+            <div class="container">
+                <div class="row row-cols-12">
+                    <div class="col">
+                        <h1>BASE HEADER</h1>
+                    </div> <!-- /col -->
+                </div> <!-- /row -->
+            </div> <!-- /container -->
+        </header> <!-- /header -->
 
-          <!-- Option 1: Bootstrap Bundle with Popper -->
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-        <footer>BASE FOOTER</footer>
-    </body>
+   <!-- content section
+   =================================================== -->
+        <section>
+            <div class="container">
+                {% block content %}{% endblock content %}
+            </div> <!-- /container -->
+        </section> <!-- /content section -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- footer section
+   =================================================== -->
+        <footer>
+            <div class="container">
+                <div class="row row-cols-12">
+                    <div class="col">
+                        BASE FOOTER
+                    </div> <!-- /col -->
+                </div> <!-- /row -->
+            </div> <!-- /container -->
+        </footer> <!-- /footer section -->
+   </body>
 </html>

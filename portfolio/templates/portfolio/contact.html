@@ -1,8 +1,9 @@
 {% extends 'portfolio/base_contact.html' %}
 {% load widget_tweaks %}
 
-{% block title %}CONTACT{% endblock title %}
-{% block content %}
+{% block form %}
+<!-- form
+================================================================= -->
 <form method="post" class="needs-validation" novalidate>
     {% csrf_token %}
         <!--{% render_field form.name class='form-control' %} -->
@@ -16,7 +17,7 @@
             </div>
         {% endfor %}
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</form> <!-- /form -->
 <script>
 (function () {
   'use strict'
@@ -38,4 +39,4 @@
     })
 })()
 </script>
-{% endblock content %}
+{% endblock form %}
