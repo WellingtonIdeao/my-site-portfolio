@@ -1,17 +1,18 @@
 {% extends 'portfolio/base_contact.html' %}
 {% load widget_tweaks %}
 
-{% block title %}CONTACT{% endblock %}
+{% block title %}CONTACT{% endblock title %}
 {% block content %}
 <form method="post" class="needs-validation" novalidate>
     {% csrf_token %}
         <!--{% render_field form.name class='form-control' %} -->
         {% for field in form %}
             <div class="mb-3">
-                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                {{ field|add_class:"form-control" }}
+                <!--<label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label> -->
+                <!-- {{ field|add_class:"form-control" }} -->
+                {% render_field field class="form-control" placeholder=field.name %}
                 <div class="valid-feedback">Ok!</div>
-                <div class="invalid-feedback">Please choose a valid {{ field.label|lower }}</div>
+                <div class="invalid-feedback">Please choose a valid {{ field.name }}</div>
             </div>
         {% endfor %}
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -37,4 +38,4 @@
     })
 })()
 </script>
-{% endblock %}
+{% endblock content %}
