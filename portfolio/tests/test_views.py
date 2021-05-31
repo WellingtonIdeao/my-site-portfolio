@@ -28,6 +28,7 @@ class AboutViewTests(TestCase):
         response = self.client.get(reverse('portfolio:about'))
         self.assertEqual(response.status_code, 200)
 
+    """
     def test_profile_on_context(self):
         profile = Profile.objects.get(pk=1)
         response = self.client.get(reverse('portfolio:about'))
@@ -35,6 +36,7 @@ class AboutViewTests(TestCase):
             response.context['profile'],
             profile,
         )
+    """
 
 
 class ServicesViewTests(TestCase):
