@@ -21,8 +21,8 @@
     </head>
 
    <body>
-    <!-- header
-    ================================================== -->
+<!-- header
+================================================== -->
         <header>
             <div class="container">
                 <div class="row row-cols-12">
@@ -30,11 +30,38 @@
                         <h1>BASE HEADER</h1>
                     </div> <!-- /col -->
                 </div> <!-- /row -->
-            </div> <!-- /container -->
-        </header> <!-- /header -->
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navegation">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button> <!-- /navbar-toggler -->
 
-   <!-- content section
-   =================================================== -->
+                         <div class="collapse navbar-collapse" id="navbarMainMenu">
+                             <ul class="navbar-nav">
+                                 <li class="nav-item">
+                                     <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#">about</a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a class="nav-link" href="#">service</a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a class="nav-link" href="#">portfolio</a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a class="nav-link" href="#">contact</a>
+                                 </li>
+                             </ul><!-- /navbar-nav -->
+                         </div><!-- /navbarMainMenu -->
+                    </div><!-- /container-fluid -->
+                </nav><!-- /nav -->
+            </div><!-- /container -->
+        </header><!-- /header -->
+
+<!-- content section
+================================================== -->
         <section>
             <div class="container">
                 {% block content %}{% endblock content %}
@@ -44,8 +71,8 @@
         <!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
-    <!-- footer section
-   =================================================== -->
+<!-- footer section
+================================================== -->
         <footer>
             <div class="container">
                 <div class="row row-cols-12">
