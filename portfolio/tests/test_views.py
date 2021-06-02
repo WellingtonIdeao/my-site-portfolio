@@ -46,16 +46,16 @@ class ServicesViewTests(TestCase):
         Service.objects.create(name='name', description='description')
 
     def test_status_200(self):
-        response = self.client.get(reverse('portfolio:services'))
+        response = self.client.get(reverse('portfolio:service'))
         self.assertEqual(response.status_code, 200)
 
     def test_one_service(self):
-        response = self.client.get(reverse('portfolio:services'))
+        response = self.client.get(reverse('portfolio:service'))
         self.assertQuerysetEqual(response.context['service_list'], ['<Service: name>'])
 
     def test_many_services(self):
         Service.objects.create(name='name', description='description')
-        response = self.client.get(reverse('portfolio:services'))
+        response = self.client.get(reverse('portfolio:service'))
         self.assertQuerysetEqual(
             response.context['service_list'],
             ['<Service: name>', '<Service: name>'],

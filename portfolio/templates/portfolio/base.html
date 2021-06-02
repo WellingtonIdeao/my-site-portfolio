@@ -37,23 +37,13 @@
                         </button> <!-- /navbar-toggler -->
 
                          <div class="collapse navbar-collapse" id="navbarMainMenu">
-                             <ul class="navbar-nav">
-                                 <li class="nav-item">
-                                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">about</a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a class="nav-link" href="#">service</a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a class="nav-link" href="#">portfolio</a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a class="nav-link" href="#">contact</a>
-                                 </li>
-                             </ul><!-- /navbar-nav -->
+                             <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                                 <a class="nav-link active" aria-current="page" href="{% url 'portfolio:index' %}">Home</a>
+                                 <a class="nav-link" href="{% url 'portfolio:about' %}">about</a>
+                                 <a class="nav-link" href="{% url 'portfolio:service' %}">service</a>
+                                 <a class="nav-link" href="{% url 'portfolio:portfolio' %}">portfolio</a>
+                                 <a class="nav-link" href="{% url 'portfolio:contact' %}">contact</a>
+                             </div><!-- /navbar-nav -->
                          </div><!-- /navbarMainMenu -->
                     </div><!-- /container-fluid -->
                 </nav><!-- /nav -->
