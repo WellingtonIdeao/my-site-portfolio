@@ -4,19 +4,10 @@
 {% block title %}Service{% endblock title %}
 
 {% block content %}
-<div class="row row-cols-12">
-    <div class="col">
-     {% block header %}{% endblock header %}
-    </div> <!-- /col -->
-</div> <!-- /row -->
-<div class="row row-cols-12">
-    <div class="col">
-     {% block service %}{% endblock service %}
-    </div> <!-- /col -->
-</div> <!-- /row -->
-<div class="row row-cols-12">
-    <div class="col">
-     {% block portfolio %}{% endblock portfolio %}
-    </div> <!-- /col -->
+<div class="text-center">
+    {% block header %} {% endblock header %}
+</div>
+<div class="row text-center">
+    {% block service %} {% endblock service %}
 </div> <!-- /row -->
 {% endblock content %}

@@ -1,6 +1,19 @@
 {% extends 'portfolio/base_about.html' %}
 
-{% block header %}<h1>CONTENT HEADER</h1>{% endblock header %}
-{% block about %}ABOUT{% endblock about %}
+{% block intro-about %}
+<!-- intro-about
+================================================================= -->
+<p class="lead">Experiência, criatividade e Inovação em desenvolvimento para a Internet.</p><!-- /intro-about -->
+{% endblock intro-about %}
+
+{% block about %}
+<!-- about --> <!-- /about -->
+<p>{{profile.name }}</p>
+<p>{{ profile.description }}</p>
+<p>{{ profile.occupation }}</p>
+<p>{{ profile.email }}</p>
+
+{% endblock about %}
+
 {% block portfolio %}PORTFOLIOS{% endblock portfolio %}
 
