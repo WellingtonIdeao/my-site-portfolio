@@ -17,6 +17,9 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+        <!-- bootstrap-social -->
+        <link rel="stylesheet" href="{% static 'portfolio/css/bootstrap-social.css' %}">
+
         <!-- Font-Awesome -->
         <script src="https://kit.fontawesome.com/7525aea826.js" crossorigin="anonymous"></script>
         <title>{% block title %}{% endblock title %}</title>
@@ -68,7 +71,15 @@
                         Copyright © Wellington Ideão 2021
                     </div> <!-- /col -->
                     <div class="col-lg-4 my-3 my-lg-0">
-                        col-4
+                        <a class="btn btn-social-icon" href="https://www.twitter.com/">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                         <a class="btn btn-social-icon" href="https://www.facebook.com/">
+                            <i class="fab fa-facebook"></i>
+                         </a>
+                        <a class="btn btn-social-icon" href="https://www.linkedin.com/">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                     </div> <!-- /col -->
                     <div class="col-lg-4 text-lg-end">
                         col-4
