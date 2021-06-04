@@ -1,13 +1,12 @@
 {% extends 'portfolio/base_contact.html' %}
 {% load widget_tweaks %}
 
-{% block intro-contact %}
-<!-- intro-contact
+{% block header %}
+<!-- header
 ================================================================= -->
-<h5>Contato</h5>
-<h1>Vamos lá?</h1>
-<p class="lead">Preencha o formulário abaixo para esclarecer suas dúvidas e dar início ao seu projeto!</p><!-- /intro-contact -->
-{% endblock intro-contact %}
+<h1 class="text-uppercase">Contato</h1>
+<h2 class="text-muted">Preencha o formulário abaixo para esclarecer suas dúvidas e dar início ao seu projeto.</h2><!-- /header -->
+{% endblock header %}
 {% block contact-form %}
 <!-- contact-form
 ================================================================= -->
@@ -24,8 +23,10 @@
             <div class="invalid-feedback">Please choose a valid {{ field.name }}</div>
         </div>
         {% endfor %}
-        <button type="submit" class="btn btn-primary">Submit</button>
     </fieldset>
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+    </div>
 </form> <!-- /contact-form -->
 <script>
 (function () {
