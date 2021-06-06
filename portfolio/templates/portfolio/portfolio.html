@@ -9,83 +9,23 @@
 {% block portfolio %}
 <!-- Portfolio Grid
 ================================================== -->
+{% for project in project_list %}
 <div class="col-sm-6 col-lg-4 mb-4">
 <!-- Portfolio item 1 -->
-        <figure class="figure">
-             <a data-bs-toggle="modal" href="#portfolioModal1">
-                <img class="figure-img img-fluid" src="{% static 'portfolio/img/1.jpg' %}" alt="portfolio1 photo" />
-            </a>
-            <figcaption class="figure=caption">
-                <h5 class="text-secondary">Threads</h5>
-                <div class="text-muted">Illustration</div>
-            </figcaption>
-       </figure>
+    {% for imageProject in project.imageproject_set.all %}
+            <!-- {{imageProject.image}} -->
+    <figure class="figure">
+        <a data-bs-toggle="modal" href="#portfolioModal1">
+            <img class="figure-img img-fluid" src="{{ imageProject.image.url }}" alt="..." />
+        </a>
+        <figcaption class="figure=caption">
+            <h5 class="text-secondary">Threads</h5>
+            <div class="text-muted">Illustration</div>
+        </figcaption>
+    </figure>
+    {% endfor %}
 </div><!-- /portfolio item 1-->
-
-<div class="col-sm-6 col-lg-4 mb-4">
-<!-- Portfolio item 2 -->
-        <figure class="figure">
-             <a data-bs-toggle="modal" href="#portfolioModal2">
-                <img class="figure-img img-fluid" src="{% static 'portfolio/img/2.jpg' %}" alt="portfolio2 photo" />
-            </a>
-            <figcaption class="figure=caption">
-                <h5 class="text-secondary">Threads</h5>
-                <div class="text-muted">Illustration</div>
-            </figcaption>
-       </figure>
-</div><!-- /portfolio item 2-->
-
-<div class="col-sm-6 col-lg-4 mb-4">
-<!-- Portfolio item 3 -->
-        <figure class="figure">
-             <a data-bs-toggle="modal" href="#portfolioModal3">
-                <img class="figure-img img-fluid" src="{% static 'portfolio/img/3.jpg' %}" alt="portfolio3 photo" />
-            </a>
-            <figcaption class="figure=caption">
-                <h5 class="text-secondary">Threads</h5>
-                <div class="text-muted">Illustration</div>
-            </figcaption>
-       </figure>
-</div><!-- /portfolio item 3-->
-
-<div class="col-sm-6 col-lg-4 mb-4">
-<!-- Portfolio item 4 -->
-        <figure class="figure">
-             <a data-bs-toggle="modal" href="#portfolioModal4">
-                <img class="figure-img img-fluid" src="{% static 'portfolio/img/4.jpg' %}" alt="portfolio4 photo" />
-            </a>
-            <figcaption class="figure=caption">
-                <h5 class="text-secondary">Threads</h5>
-                <div class="text-muted">Illustration</div>
-            </figcaption>
-       </figure>
-</div><!-- /portfolio item 4-->
-
-<div class="col-sm-6 col-lg-4 mb-4">
-<!-- Portfolio item 5 -->
-        <figure class="figure">
-             <a data-bs-toggle="modal" href="#portfolioModal5">
-                <img class="figure-img img-fluid" src="{% static 'portfolio/img/5.jpg' %}" alt="portfolio5 photo" />
-            </a>
-            <figcaption class="figure=caption">
-                <h5 class="text-secondary">Threads</h5>
-                <div class="text-muted">Illustration</div>
-            </figcaption>
-       </figure>
-</div><!-- /portfolio item 5-->
-
-<div class="col-sm-6 col-lg-4 mb-4">
-<!-- Portfolio item 6 -->
-        <figure class="figure">
-             <a data-bs-toggle="modal" href="#portfolioModal6">
-                <img class="figure-img img-fluid" src="{% static 'portfolio/img/6.jpg' %}" alt="portfolio6 photo" />
-            </a>
-            <figcaption class="figure=caption">
-                <h5 class="text-secondary">Threads</h5>
-                <div class="text-muted">Illustration</div>
-            </figcaption>
-       </figure>
-</div><!-- /portfolio item 6-->
+{% endfor %}
 
 <!-- /Portfolio Grid-->
 

@@ -30,6 +30,10 @@ class PortfolioView(ListView):
     model = Project
     template_name = 'portfolio/portfolio.html'
 
+    def get_queryset(self):
+        """Return the last six projects."""
+        return Project.objects.order_by('-date')[:6]
+
 
 class ContactView(CreateView):
     template_name = 'portfolio/contact.html'
