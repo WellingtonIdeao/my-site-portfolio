@@ -13,208 +13,55 @@
 <div class="col-sm-6 col-lg-4 mb-4">
 <!-- Portfolio item 1 -->
     {% for imageProject in project.imageproject_set.all %}
-            <!-- {{imageProject.image}} -->
+            <h5 class="text-muted">{{project.name}}</h5>
     <figure class="figure">
-        <a data-bs-toggle="modal" href="#portfolioModal1">
+        <a data-bs-toggle="modal" href="#portfolioModal{{project.id}}">
             <img class="figure-img img-fluid" src="{{ imageProject.image.url }}" alt="..." />
         </a>
         <figcaption class="figure=caption">
-            <h5 class="text-secondary">Threads</h5>
-            <div class="text-muted">Illustration</div>
+            <h5 class="text-secondary">{{ project.name }}</h5>
+            <div class="text-muted">{{project.description }}</div>
         </figcaption>
     </figure>
     {% endfor %}
-</div><!-- /portfolio item 1-->
-{% endfor %}
-
-<!-- /Portfolio Grid-->
 
 <!-- Portfolio Modals
 ================================================== -->
-
-<div class="modal fade" id="portfolioModal1" tabindex="-1"  aria-labelledby="portfolioModal1" aria-hidden="true">
-    <!-- Portfolio item 1 modal popup-->
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">Project Name</h2>
-                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <ul class="list-inline">
-                                <li><strong>Client:</strong>Explore</li>
-                                <li><strong>Category:</strong>Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal">
-                                <i class="fas fa-times me-1"></i>Close Project
-                            </button>
+    <div class="modal fade"  id="portfolioModal{{project.id}}" tabindex="-1"  aria-labelledby="portfolioModal" aria-hidden="true">
+        <!-- Portfolio item modal popup-->
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">{{project.name}}</h2>
+                                <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <p>{{project.description }}</p>
+                                <ul class="list-inline">
+                                    <li><strong>Client:</strong>Explore</li>
+                                    <li><strong>Category:</strong>Graphic Design</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal">
+                                    <i class="fas fa-times me-1"></i>Close Project
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div><!-- /Portfolio item 1 modal popup-->
+    </div><!-- /Portfolio item modal popup-->
+<!-- /Portfolio Modals -->
+
+</div><!-- /portfolio item-->
+{% endfor %}
+<!-- /Portfolio Grid-->
 
 
-<div class="modal fade" id="portfolioModal2" tabindex="-1"  aria-labelledby="portfolioModal2" aria-hidden="true">
-    <!-- Portfolio item 2 modal popup-->
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">Project Name</h2>
-                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <ul class="list-inline">
-                                <li><strong>Client:</strong>Explore</li>
-                                <li><strong>Category:</strong>Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal">
-                                <i class="fas fa-times me-1"></i>Close Project
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><!-- /Portfolio item 2 modal popup-->
-
-<div class="modal fade" id="portfolioModal3" tabindex="-1"  aria-labelledby="portfolioModal3" aria-hidden="true">
-    <!-- Portfolio item 3 modal popup-->
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">Project Name</h2>
-                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <ul class="list-inline">
-                                <li><strong>Client:</strong>Explore</li>
-                                <li><strong>Category:</strong>Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal">
-                                <i class="fas fa-times me-1"></i>Close Project
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><!-- /Portfolio item 3 modal popup-->
-
-
-<div class="modal fade" id="portfolioModal4" tabindex="-1"  aria-labelledby="portfolioModal4" aria-hidden="true">
-    <!-- Portfolio item 4 modal popup-->
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">Project Name</h2>
-                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <ul class="list-inline">
-                                <li><strong>Client:</strong>Explore</li>
-                                <li><strong>Category:</strong>Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal">
-                                <i class="fas fa-times me-1"></i>Close Project
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><!-- /Portfolio item 4 modal popup-->
-
-
-<div class="modal fade" id="portfolioModal5" tabindex="-1"  aria-labelledby="portfolioModal5" aria-hidden="true">
-    <!-- Portfolio item 5 modal popup-->
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">Project Name</h2>
-                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <ul class="list-inline">
-                                <li><strong>Client:</strong>Explore</li>
-                                <li><strong>Category:</strong>Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal">
-                                <i class="fas fa-times me-1"></i>Close Project
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><!-- /Portfolio item 5 modal popup-->
-
-
-<div class="modal fade" id="portfolioModal6" tabindex="-1"  aria-labelledby="portfolioModal6" aria-hidden="true">
-    <!-- Portfolio item 6 modal popup-->
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">Project Name</h2>
-                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <ul class="list-inline">
-                                <li><strong>Client:</strong>Explore</li>
-                                <li><strong>Category:</strong>Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal">
-                                <i class="fas fa-times me-1"></i>Close Project
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><!-- /Portfolio item 6 modal popup-->
-<!-- Portfolio Modals -->
 {% endblock portfolio %}
 
