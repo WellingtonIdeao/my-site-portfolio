@@ -1,18 +1,22 @@
 {% extends 'portfolio/base_about.html' %}
 
-{% block intro-about %}
-<!-- intro-about
-================================================================= -->
-<p class="lead">Experiência, criatividade e Inovação em desenvolvimento para a Internet.</p><!-- /intro-about -->
-{% endblock intro-about %}
-
 {% block about %}
-<!-- about --> <!-- /about -->
-<p>{{profile.name }}</p>
-<p>{{ profile.description }}</p>
-<p>{{ profile.occupation }}</p>
-<p>{{ profile.email }}</p>
-
+<!-- about -->
+<div class="col-lg-8 m-auto">
+    <h5 class="text-uppercase">Sobre</h5>
+    <h1 class="text-muted">Lorem ipsum dolor sit amet consectetur.</h1>
+    <div class="row">
+        <div class="col-sm-4 d-inline-block float-sm-start">
+            <figure class="figure">
+                <img class="figure-img img-fluid" src="{{profile.image.url}}" alt="..."/>
+            </figure>
+        </div>
+        <div class="col-sm-8 container-fluid">
+            <p class="text-start">Formado na área de desenvolvimento de sistemas e medalhista olímpico na modalidade "Web Design / Development" na SP Skills 2017, atuo no mercado como freelancer, oferecendo soluções completas para sistemas web, mobile, desktop, design gráfico, e sistemas integrados.</p>
+        </div>
+    </div>
+</div>
+<!-- /about -->
 {% endblock about %}
 
 {% block portfolio %}PORTFOLIOS{% endblock portfolio %}

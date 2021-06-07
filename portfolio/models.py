@@ -50,17 +50,7 @@ class Project(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     date = models.DateField()
     url = models.URLField(null=True, blank=True)
+    thumbnail = models.ImageField(upload_to='images')
 
     def __str__(self):
         return self.name
-
-
-class ImageProject(models.Model):
-    name = models.CharField(max_length=50, default='image')
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images')
-
-    def __str__(self):
-        return self.name
-
-

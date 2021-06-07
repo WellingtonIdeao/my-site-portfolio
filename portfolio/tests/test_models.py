@@ -1,5 +1,5 @@
 from django.test import TestCase
-from ..models import Contact, Client, Profile, Service, Project, ImageProject
+from ..models import Contact, Client, Profile, Service, Project
 from django.utils import timezone
 
 
@@ -128,7 +128,7 @@ class ServiceModelTests(TestCase):
         self.assertEqual(50, max_length)
         
         
-class ImageProjectModelTests(TestCase):
+"""class ImageProjectModelTests(TestCase):
     @classmethod
     def setUpTestData(cls):
         service = Service.objects.create(name='name', description='description')
@@ -148,3 +148,4 @@ class ImageProjectModelTests(TestCase):
         max_length = service._meta.get_field('name').max_length
         self.assertEqual(50, max_length)
 
+"""

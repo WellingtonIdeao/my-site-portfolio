@@ -22,6 +22,7 @@ class AboutViewTests(TestCase):
             occupation='occupation',
             email='email@mail.com',
             phone='99999999999',
+            image='/images/1.jpg'
         )
 
     def test_status_200(self):
@@ -76,6 +77,7 @@ class PortfolioViewTests(TestCase):
                 service=service,
                 client=client,
                 date=timezone.now(),
+                thumbnail="images/1.jpg"
             )
 
     def test_status_200(self):
