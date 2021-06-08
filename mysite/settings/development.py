@@ -1,11 +1,20 @@
 from .base import *
+import json
+
+
+# Extract Keys From the Json file
+def get_key(path):
+    with open(path) as f:
+        return json.load(f)
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open(BASE_DIR / 'SECRET_KEY.txt') as f:
-    SECRET_KEY = f.read().strip()
+keys = get_key(BASE_DIR / 'secrets.json')
+
+SECRET_KEY = keys['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = keys['DEBUG']
 
 ALLOWED_HOSTS = []
 
