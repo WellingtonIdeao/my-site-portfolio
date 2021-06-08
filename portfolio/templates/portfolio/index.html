@@ -1,6 +1,8 @@
 {% extends 'portfolio/base_index.html' %}
 
-{% block header %}<h1>CONTENT HEADER</h1>{% endblock header %}
-{% block portfolio %}PORTFOLIOS{% endblock portfolio %}
-{% block service %}SERVICES{% endblock service %}
-{% block about %}ABOUT{% endblock about %}
+
+{% block sub-header %}<h1>Welcome to our studio!</h1> {% endblock sub-header %}
+{% block header %}<h1>IT´S NICE TO MEET YOU</h1> {% endblock header %}
+{% block button %}
+<a class="btn btn-primary btn-xl text-uppercase" href="{% url 'portfolio:service' %}">Tell me more</a>
+{% endblock button %}

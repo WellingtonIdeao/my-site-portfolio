@@ -1,26 +1,17 @@
 {% extends 'portfolio/base.html' %}
 
 
-{% block title %}INDEX|HOME{% endblock title %}
+{% block title %}Home{% endblock title %}
 {% block content %}
-<div class="row row-cols-12">
-    <div class="col">
-     {% block header %}{% endblock header %}
-    </div> <!-- /col -->
-</div> <!-- /row -->
-<div class="row row-cols-12">
-    <div class="col">
-     {% block portfolio %}{% endblock portfolio %}
-    </div> <!-- /col -->
-</div> <!-- /row -->
-<div class="row row-cols-12">
-    <div class="col">
-     {% block service %}{% endblock service %}
-    </div> <!-- /col -->
-</div> <!-- /row -->
-<div class="row row-cols-12">
-    <div class="col">
-     {% block about %}{% endblock about %}
-    </div> <!-- /col -->
-</div> <!-- /row -->
+<div class="container pt-3 pb-5 text-align-center">
+    <div class="container">
+        <div class="mb-4">
+            {% block sub-header %}{% endblock sub-header %}
+        </div>
+        <div class="mb-5">
+            {% block header %}{% endblock header %}
+        </div>
+        {% block button %} {% endblock button %}
+    </div>
+</div> <!-- /container-->
 {% endblock content %}
