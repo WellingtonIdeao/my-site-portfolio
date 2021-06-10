@@ -20,7 +20,7 @@ SECRET_KEY = keys['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = keys['DEBUG']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = keys['ALLOWED_HOSTS']
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -35,5 +35,18 @@ DATABASES = {
         'PORT': keys['DB_PORT'],
     }
 }
+
+# HSTS is an HTTP header that informs a browser that all future connections to a particular site should always use HTTPS
+SECURE_HSTS_SECONDS = keys['SECURE_HSTS_SECONDS']
+SECURE_HSTS_PRELOAD = keys['SECURE_HSTS_PRELOAD']
+SECURE_HSTS_INCLUDE_SUBDOMAINS = keys['SECURE_HSTS_INCLUDE_SUBDOMAINS']
+
+# Requests over HTTP are redirected to HTTPS.
+SECURE_SSL_REDIRECT = keys['SECURE_SSL_REDIRECT']
+
+# Secure cookies
+SESSION_COOKIE_SECURE = keys['SESSION_COOKIE_SECURE']
+CSRF_COOKIE_SECURE = keys['CSRF_COOKIE_SECURE']
+
 
 
