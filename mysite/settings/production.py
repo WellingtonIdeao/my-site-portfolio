@@ -1,6 +1,10 @@
 from .base import *
 import json
 
+# Application definition
+
+INSTALLED_APPS += ['psycopg2', ]
+
 
 # Extract Keys From the Json file
 def get_key(path):
@@ -8,13 +12,13 @@ def get_key(path):
         return json.load(f)
 
 
-# SECURITY WARNING: keep the secret key used in production secret!
 keys = get_key(BASE_DIR / 'secrets.json')
 
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = keys['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = keys['DEBUG']
 
 ALLOWED_HOSTS = []
 
@@ -24,11 +28,11 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',
-        'USER': 'mydatabaseuser',
-        'PASSWORD': 'mypassword',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': keys['DB_NAME'],
+        'USER': keys['DB_USER'],
+        'PASSWORD': keys['DB_PASSWORD'],
+        'HOST': keys['DB_HOST'],
+        'PORT': keys['DB_PORT'],
     }
 }
 

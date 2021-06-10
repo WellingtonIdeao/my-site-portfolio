@@ -1,5 +1,6 @@
 from django.test import TestCase
 from ..models import Contact, Client, Profile, Service, Project
+from django.shortcuts import get_object_or_404
 from django.utils import timezone
 
 
@@ -70,6 +71,7 @@ class ProjectModelTests(TestCase):
             client=client,
             date=timezone.now(),
             url='site.com',
+            thumbnail='images/1.jpg'
         )
 
     def test_name_max_length(self):
@@ -118,34 +120,13 @@ class ProfileModelTests(TestCase):
 
 
 class ServiceModelTests(TestCase):
+
     @classmethod
     def setUpTestData(cls):
         Service.objects.create(name='name', description='description')
 
     def test_name_max_length(self):
-        service = Service.objects.get(id=1)
-        max_length = service._meta.get_field('name').max_length
-        self.assertEqual(50, max_length)
-        
-        
-"""class ImageProjectModelTests(TestCase):
-    @classmethod
-    def setUpTestData(cls):
-        service = Service.objects.create(name='name', description='description')
-        client = Client.objects.create(name='name', email='mail@mail.com', phone='99999999999', city='City-State')
-        project = Project.objects.create(
-            name='name',
-            description='description',
-            service=service,
-            client=client,
-            date=timezone.now(),
-            url='site.com',
-        )
-        ImageProject.objects.create(name='name', project=project)
-
-    def test_name_max_length(self):
-        service = ImageProject.objects.get(id=1)
+        service = Service.objects.get(id=2)
         max_length = service._meta.get_field('name').max_length
         self.assertEqual(50, max_length)
 
-"""
