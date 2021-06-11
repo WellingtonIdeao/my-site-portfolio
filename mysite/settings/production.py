@@ -22,6 +22,17 @@ DEBUG = keys['DEBUG']
 
 ALLOWED_HOSTS = keys['ALLOWED_HOSTS']
 
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -48,5 +59,7 @@ SECURE_SSL_REDIRECT = keys['SECURE_SSL_REDIRECT']
 SESSION_COOKIE_SECURE = keys['SESSION_COOKIE_SECURE']
 CSRF_COOKIE_SECURE = keys['CSRF_COOKIE_SECURE']
 
+# The file storage engine to use when collecting static files with the collectstatic management command.
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
