@@ -3,7 +3,7 @@ import json
 
 # Application definition
 
-INSTALLED_APPS += ['psycopg2', ]
+INSTALLED_APPS += ['psycopg2']
 
 
 # Extract Keys From the Json file
