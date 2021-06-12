@@ -6,6 +6,10 @@ SECRET_KEY = ")cs-%s3ednl%7cw2$12&g-h(%*c8lv+!zcw2$jj$^*t7wm+^$%"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+ALLOWED_HOSTS = [
+    "https://wi-portfolio.herokuapp.com/",
+]
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
