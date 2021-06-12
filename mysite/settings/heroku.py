@@ -8,6 +8,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "https://wi-portfolio.herokuapp.com/",
+    ".herokuapp.com"
 ]
 
 # Database
