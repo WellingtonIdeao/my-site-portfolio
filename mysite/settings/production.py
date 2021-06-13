@@ -8,7 +8,7 @@ def get_key(path):
         return json.load(f)
 
 
-keys = get_key(BASE_DIR / 'secrets.json')
+'''keys = get_key(BASE_DIR / 'secrets.json')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = keys['SECRET_KEY']
@@ -17,7 +17,7 @@ SECRET_KEY = keys['SECRET_KEY']
 DEBUG = keys['DEBUG']
 
 ALLOWED_HOSTS = keys['ALLOWED_HOSTS']
-
+'''
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
