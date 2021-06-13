@@ -32,7 +32,7 @@ MIDDLEWARE = [
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': keys['DB_NAME'],
@@ -57,5 +57,5 @@ CSRF_COOKIE_SECURE = keys['CSRF_COOKIE_SECURE']
 
 # The file storage engine to use when collecting static files with the collectstatic management command.
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
+'''
 
