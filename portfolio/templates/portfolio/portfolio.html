@@ -11,10 +11,12 @@
 ================================================== -->
 {% for project in project_list %}
 <div class="col-sm-6 col-lg-4 mb-4">
+    {% with url_base='portfolio/img/' counter_str=forloop.counter|stringformat:'s' %}
+    {% with url=url_base|add:counter_str|add:'.jpg' %}
 <!-- Portfolio item -->
     <figure class="figure">
         <a data-bs-toggle="modal" href="#portfolioModal{{project.id}}">
-            <img class="figure-img img-fluid" src="{{ project.thumbnail.url }}" alt="..." />
+            <img class="figure-img img-fluid" src="{% static url %}" alt="..." />
         </a>
         <figcaption class="figure=caption">
             <h5 class="text-secondary text-capitalize">{{ project.name }}</h5>
@@ -31,7 +33,7 @@
                 <div class="modal-body p-0 text-start">
                     <figure class="figure">
                         <a data-bs-toggle="modal" href="#portfolioModal{{project.id}}">
-                            <img class="figure-img img-fluid mb-0" src="{{ project.thumbnail.url }}" alt="..." />
+                            <img class="figure-img img-fluid mb-0" src="{% static url %}" alt="..." />
                         </a>
                     </figure>
                     <div class="p-4">
@@ -58,6 +60,8 @@
         </div>
     </div>
 <!-- /Portfolio Modals -->
+   {% endwith %}
+   {% endwith %}
 </div><!-- /col-->
 {% endfor %}
 <!-- /Portfolio Grid-->

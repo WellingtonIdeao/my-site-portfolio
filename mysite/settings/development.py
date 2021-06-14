@@ -16,7 +16,7 @@ SECRET_KEY = keys['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = keys['DEBUG']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = keys['ALLOWED_HOSTS']
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

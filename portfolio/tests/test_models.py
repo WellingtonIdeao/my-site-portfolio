@@ -126,7 +126,7 @@ class ServiceModelTests(TestCase):
         Service.objects.create(name='name', description='description')
 
     def test_name_max_length(self):
-        service = Service.objects.get(id=2)
+        service = Service.objects.get(id=1)
         max_length = service._meta.get_field('name').max_length
         self.assertEqual(50, max_length)
 
