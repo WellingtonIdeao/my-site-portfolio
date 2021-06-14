@@ -12,55 +12,55 @@
 {% for project in project_list %}
 <div class="col-sm-6 col-lg-4 mb-4">
     {% with url_base='portfolio/img/' counter_str=forloop.counter|stringformat:'s' %}
-    {% with url=url_base|add:counter_str|add:'.jpg' %}
-<!-- Portfolio item -->
-    <figure class="figure">
-        <a data-bs-toggle="modal" href="#portfolioModal{{project.id}}">
-            <img class="figure-img img-fluid" src="{% static url %}" alt="..." />
-        </a>
-        <figcaption class="figure=caption">
-            <h5 class="text-secondary text-capitalize">{{ project.name }}</h5>
-            <div class="text-muted text-capitalize">{{project.service }}</div>
-        </figcaption>
-    </figure>
-<!-- /Portfolio item -->
+        {% with url=url_base|add:counter_str|add:'.jpg' %}
+    <!-- Portfolio item -->
+        <figure class="figure">
+            <a data-bs-toggle="modal" href="#portfolioModal{{project.id}}">
+                <img class="figure-img img-fluid" src="{% static url %}" alt="..." />
+            </a>
+            <figcaption class="figure=caption">
+                <h5 class="text-secondary text-capitalize">{{ project.name }}</h5>
+                <div class="text-muted text-capitalize">{{project.service }}</div>
+            </figcaption>
+        </figure>
+    <!-- /Portfolio item -->
 
-<!-- Portfolio Modals
-================================================== -->
-    <div class="modal fade"  id="portfolioModal{{project.id}}" tabindex="-1"  aria-labelledby="portfolioModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body p-0 text-start">
-                    <figure class="figure">
-                        <a data-bs-toggle="modal" href="#portfolioModal{{project.id}}">
-                            <img class="figure-img img-fluid mb-0" src="{% static url %}" alt="..." />
-                        </a>
-                    </figure>
-                    <div class="p-4">
-                        <!-- description-box -->
-                        <h4 class="text-uppercase">{{project.name}}</h4>
-                        <p>{{project.description}}</p>
-                        <p class="text-muted text-uppercase">{{project.service}}</p>
-                    </div> <!-- /description-box -->
-                </div>
-
-                <div class="modal-footer bg-dark ">
-                    <div class="col">
-                        {% if project.url %}
-                            <a class="text-decoration-none text-light"  target="_blank" href="{{project.url}}" >DETALHES</a>
-                        {% else %}
-                            <a class="text-decoration-none text-light"  data-bs-dismiss="modal" href="#" >DETALHES</a>
-                        {% endif %}
+    <!-- Portfolio Modals
+    ================================================== -->
+        <div class="modal fade"  id="portfolioModal{{project.id}}" tabindex="-1"  aria-labelledby="portfolioModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-0 text-start">
+                        <figure class="figure">
+                            <a data-bs-toggle="modal" href="#portfolioModal{{project.id}}">
+                                <img class="figure-img img-fluid mb-0" src="{% static url %}" alt="..." />
+                            </a>
+                        </figure>
+                        <div class="p-4">
+                            <!-- description-box -->
+                            <h4 class="text-uppercase">{{project.name}}</h4>
+                            <p>{{project.description}}</p>
+                            <p class="text-muted text-uppercase">{{project.service}}</p>
+                        </div> <!-- /description-box -->
                     </div>
-                    <div class="col">
-                        <a class="text-decoration-none text-light" href="#" data-bs-dismiss="modal" >FECHAR</a>>
+
+                    <div class="modal-footer bg-dark ">
+                        <div class="col">
+                            {% if project.url %}
+                                <a class="text-decoration-none text-light"  target="_blank" href="{{project.url}}" >DETALHES</a>
+                            {% else %}
+                                <a class="text-decoration-none text-light"  data-bs-dismiss="modal" href="#" >DETALHES</a>
+                            {% endif %}
+                        </div>
+                        <div class="col">
+                            <a class="text-decoration-none text-light" href="#" data-bs-dismiss="modal" >FECHAR</a>>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-<!-- /Portfolio Modals -->
-   {% endwith %}
+    <!-- /Portfolio Modals -->
+       {% endwith %}
    {% endwith %}
 </div><!-- /col-->
 {% endfor %}
